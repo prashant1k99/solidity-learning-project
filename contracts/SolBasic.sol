@@ -144,4 +144,31 @@ contract Array {
 
 }
 
-// Structs: Similar to Object definition in 
+// Structs: Similar to Object definition in JS
+contract TeslaRegistry {
+    // Defines the schema of Tasla Object
+    struct Tesla {
+        string model;
+        uint256 year;
+        string color;
+        uint256 mileage;
+        string vin;
+    }
+
+    Tesla[] public teslas;
+
+    // To add data to the object:
+    function addTesla(string memory model, uint256 year, string memory color, uint256 mileage, string memory vin) public  {
+        // Here we create new Object for the tesla Model
+        Tesla memory newTesla = Tesla({
+            model: model,
+            year: year,
+            color: color,
+            mileage: mileage,
+            vin: vin
+        });
+
+        // Here we push the newly created tesla model in the array
+        teslas.push(newTesla);
+    }
+}

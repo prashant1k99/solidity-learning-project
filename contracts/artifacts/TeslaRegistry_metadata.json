@@ -8,34 +8,70 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "a",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "model",
+						"type": "string"
 					},
 					{
 						"internalType": "uint256",
-						"name": "b",
+						"name": "year",
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint8",
-						"name": "operation",
-						"type": "uint8"
+						"internalType": "string",
+						"name": "color",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "mileage",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "vin",
+						"type": "string"
 					}
 				],
-				"name": "performOperation",
+				"name": "addTesla",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "result",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"name": "teslas",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "model",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "year",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "color",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "mileage",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "vin",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -55,7 +91,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/SolBasic.sol": "AdvanceCalculator"
+			"contracts/SolBasic.sol": "TeslaRegistry"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
