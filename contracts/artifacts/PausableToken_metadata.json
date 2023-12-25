@@ -116,11 +116,11 @@
 	},
 	"sources": {
 		"contracts/SolBasic.sol": {
-			"keccak256": "0x2e8658d858cf423e259c592d68f69bbb952258fef998e2ff4283e7f47824d12d",
+			"keccak256": "0xd0c0f5126c574e9d81c018b1d3b8742b6ba20c8ab18ee079af285f4f263f75d5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://63d532b48d105ef33f9478629303bf7d78a4103a259a8e9f182a1bb394c8be64",
-				"dweb:/ipfs/QmYJABJgyziJEV9AiR6mL2WHtPakVyYjCh9zEaZ68gETBX"
+				"bzz-raw://a119a08dfb590b1c3c000409fcc666d47a310d09d80129812b2043f099467008",
+				"dweb:/ipfs/QmeKaDdjHiXdyrRdYGAj5zGKHpxc5wfiAGxaQTFSffFEHf"
 			]
 		}
 	},
