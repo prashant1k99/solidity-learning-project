@@ -45,7 +45,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Hello.sol": "Hello"
+			"contracts/SolBasic.sol": "Hello"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -59,7 +59,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Hello.sol": {
+		"contracts/SolBasic.sol": {
 			"keccak256": "0x5a2177ca3e69ac71a7c477f49331e7f852a95cca1f698aa67c5f932ddeb40fbe",
 			"license": "MIT",
 			"urls": [
