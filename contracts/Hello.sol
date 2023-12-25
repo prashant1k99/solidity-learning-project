@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+// Define the version of solidity compiler
 pragma solidity ^0.8.22;
 
 contract Hello {
@@ -87,4 +88,58 @@ contract VeryAdvanceCalculator is BasicCalculator {
         // else if (operation == 3) divide(a, b); <- cannot be used because of external scoping
         else revert("Invalid Operation");
     }
+}
+
+// Mapping: In JS terms it's like key value pair, where you set value at an address of a particular key
+contract Mapping {
+    // Mapping from address to uint
+    mapping(address => uint) public myMap;
+
+    function get(address _addr) public view returns (uint) {
+        // Mapping always returns a value.
+        // If the value was never set, it will return the default value.
+        return myMap[_addr];
+    }
+
+    function set(address _addr, uint _i) public {
+        // Update the value at this address
+        myMap[_addr] = _i;
+    }
+
+    function remove(address _addr) public {
+        // Reset the value to the default value
+        delete myMap[_addr];
+    }
+}
+
+// Arrays:
+contract Array {
+    // Several ways to initialize an array
+    // This is a dynamic array, it can be resized
+    uint[] public dynamicArr;
+    uint[] public dynamicArr2;
+    // Fixed sized array, all elements initiialize to 0
+    uint[10] public myFixzedSizeArr;
+    string[5] public names;
+
+    // To add data to array
+    function addToDynamicArray(uint value) public {
+        dynamicArr.push(value);
+    }
+
+    // To fetch the length of the Array
+    function getDynamicArrayLength() public view returns (uint) {
+        return dynamicArr.length;
+    }
+
+    // Fetch value at a particulary index
+    function get(uint i) public view returns (uint) {
+        return dynamicArr[i];
+    }
+
+    // Get the complete array
+    function getArr() public view returns (uint[] memory) {
+        return dynamicArr;
+    }
+
 }
