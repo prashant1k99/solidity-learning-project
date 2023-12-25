@@ -6,21 +6,27 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "get",
-				"outputs": [
+				"inputs": [
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "string",
+						"name": "_tweet",
+						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"name": "crateTweet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "helloString",
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "tweets",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -45,7 +51,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Hello.sol": "Hello"
+			"contracts/Twitter.sol": "Twitter"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -59,12 +65,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Hello.sol": {
-			"keccak256": "0xf15b53e630baf8472252e6529263ae2a8dad36749595bac155db14d3cc7e3fc1",
+		"contracts/Twitter.sol": {
+			"keccak256": "0x971c04878a27564a5613a80def06b27954967a6e71d365123f480064c61f1b72",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://69290c218d996c870d827a50f7d1b6d85c3fa421b515e65344954d5177494b10",
-				"dweb:/ipfs/QmQ7nq8G1A5FVNuxZg76DQxBXPuDwLumYsiWgXssEQAQbh"
+				"bzz-raw://2df40f3686897c83073bfd480b3d4c5c86cdcce1d650ff439abc2ce79ad3d2f4",
+				"dweb:/ipfs/QmcrFsQ6tDfph5GqowxVwcfycEe1q6aqDZdG1QbLKGrGYV"
 			]
 		}
 	},

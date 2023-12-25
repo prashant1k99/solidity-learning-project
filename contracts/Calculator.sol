@@ -9,6 +9,10 @@ pragma solidity ^0.8.22;
 contract MyCalculator {
     uint256 result = 0;
 
+    constructor(uint256 _result) {
+        result = _result;
+    }
+
     function add(uint256 num) public {
         result += num;
     }
