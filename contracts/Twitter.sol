@@ -2,26 +2,38 @@
 
 pragma solidity ^0.8.0;
 
-// 1️⃣ Create a Twitter Contract ✅
-// 2️⃣ Create a mapping between user and tweet ✅
-// 3️⃣ Add function to create a tweet and save it in mapping ✅
-// 4️⃣ Create a function to get Tweet ✅ 
-// 5️⃣ Add array of tweets ✅
+// 1️⃣ Define a Tweet Struct with author, content, timestamp, likes ✅
+// 2️⃣ Add the struct to array ✅
+// 3️⃣ Test Tweets ✅
 
 contract Twitter {
 
-    mapping(address => string[]) public tweets;
-
-    // the parameter string can be long so we add memory keyword to degine that we should store this parameter in memory
-    function crateTweet(string memory _tweet) public {
-        tweets[msg.sender].push(_tweet);
+    // Define olut struct
+    struct Tweet {
+        address auther;
+        string content;
+        uint256 timestamp;
+        uint256 likes;
     }
 
-    function getTweet(address _owner, uint _i) public view returns (string memory) {
+    mapping(address => Tweet[]) public tweets;
+
+    function crateTweet(string memory _tweet) public {
+        Tweet memory newTweet = Tweet({
+            auther: msg.sender,
+            content: _tweet,
+            timestamp: block.timestamp,
+            likes: 0
+        });
+
+        tweets[msg.sender].push(newTweet);
+    }
+
+    function getTweet(address _owner, uint _i) public view returns (Tweet memory) {
         return tweets[_owner][_i];
     }
 
-    function getAllTweets(address _owner) public  view returns (string[] memory) {
+    function getAllTweets(address _owner) public  view returns (Tweet[] memory) {
         return tweets[_owner];
     }
 }
