@@ -6,14 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_addr",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "get",
+				"name": "balances",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -25,51 +30,59 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
 					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
-					}
-				],
-				"name": "myMap",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_addr",
-						"type": "address"
-					}
-				],
-				"name": "remove",
+				"inputs": [],
+				"name": "pause",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_addr",
+						"name": "to",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_i",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "set",
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unpause",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -88,7 +101,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/SolBasic.sol": "Mapping"
+			"contracts/SolBasic.sol": "PausableToken"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -103,11 +116,11 @@
 	},
 	"sources": {
 		"contracts/SolBasic.sol": {
-			"keccak256": "0x57ed0e3086bfffb8a6dde9bf9bb989533b4809abf6d1656f6b80dba3fc7c357d",
+			"keccak256": "0x2e8658d858cf423e259c592d68f69bbb952258fef998e2ff4283e7f47824d12d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f13e0671dc1ccc83f3f45f9650787cad2a35d18c3e178f03083a1cf222fe011e",
-				"dweb:/ipfs/QmZtyaBT56TU9zguB3K4UefxbHvDcrXcdsYwqNhJUwojZY"
+				"bzz-raw://63d532b48d105ef33f9478629303bf7d78a4103a259a8e9f182a1bb394c8be64",
+				"dweb:/ipfs/QmYJABJgyziJEV9AiR6mL2WHtPakVyYjCh9zEaZ68gETBX"
 			]
 		}
 	},

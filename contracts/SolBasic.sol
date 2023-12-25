@@ -179,10 +179,30 @@ contract TeslaRegistry {
 contract SimpleToken {
     uint256 public maxPerMint = 3;
 
-    function mint(uint256 amount)  public {
+    function mint(uint256 amount) public {
         require(amount <= maxPerMint, "No more then 3 allowed");
 
         // ....
         // mint the coin
+        maxPerMint = 2;
+    }
+}
+
+// Modifiers: It is a way to add behaviour to function
+contract Product {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "You do not have access to this");
+        _;
+    }
+
+    // onlyOwner specifies that onlyOwner conditions need to specify first
+    function changeOwner(address newOwner) public onlyOwner {
+        owner = newOwner;
     }
 }
