@@ -143,3 +143,5 @@ contract Array {
     }
 
 }
+
+// Structs: Similar to Object definition in 
