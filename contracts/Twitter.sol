@@ -15,11 +15,13 @@ contract Twitter {
         uint256 likes;
     }
 
+    uint16 constant MAX_TWEET_LENGTH = 280;
+
     mapping(address => Tweet[]) public tweets;
 
     function crateTweet(string memory _tweet) public {
         // if tweet length <= 280 then we are good, otherwise we revert
-        require(bytes(_tweet).length <= 280, "Exceeds the character limit for a single tweet");
+        require(bytes(_tweet).length <= MAX_TWEET_LENGTH, "Exceeds the character limit for a single tweet");
 
         Tweet memory newTweet = Tweet({
             auther: msg.sender,
