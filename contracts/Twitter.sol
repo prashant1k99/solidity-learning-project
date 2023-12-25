@@ -2,17 +2,21 @@
 
 pragma solidity ^0.8.0;
 
-// 1️⃣ Add a function called changeTweetLength to change max tweet length ✅
-// HINT: use newTweetLength as input for function 
-// 2️⃣ Create a constructor function to set an owner of contract ✅
-// 3️⃣ Create a modifier called onlyOwner ✅
-// 4️⃣ Use onlyOwner on the changeTweetLength function ✅
+// 1️⃣ Add id to Tweet Struct to make every Tweet Unique
+// 2️⃣ Set the id to be the Tweet[] length 
+// HINT: you do it in the createTweet function
+// 3️⃣ Add a function to like the tweet
+// HINT: there should be 2 parameters, id and author
+// 4️⃣ Add a function to unlike the tweet
+// HINT: make sure you can unlike only if likes count is greater then 0
+// 4️⃣ Mark both functions external
 
 contract Twitter {
 
     // Define olut struct
     struct Tweet {
-        address auther;
+        uint256 id;
+        address author;
         string content;
         uint256 timestamp;
         uint256 likes;
@@ -37,7 +41,8 @@ contract Twitter {
         require(bytes(_tweet).length <= MAX_TWEET_LENGTH, "Exceeds the character limit for a single tweet");
 
         Tweet memory newTweet = Tweet({
-            auther: msg.sender,
+            id: tweets[msg.sender].length,
+            author: msg.sender,
             content: _tweet,
             timestamp: block.timestamp,
             likes: 0
@@ -46,15 +51,26 @@ contract Twitter {
         tweets[msg.sender].push(newTweet);
     }
 
+    function likeTweet(address author, uint256 id) external {
+        require(tweets[author][id].id == id, "Tweet does not exists");
+        tweets[author][id].likes++;
+    }
+
+    function unlikeTweet(address author, uint256 id) external {
+        require(tweets[author][id].id == id, "Tweet does not exists");
+        require(tweets[author][id].likes > 0, "Tweet has no likes");
+        tweets[author][id].likes--;
+    }
+
     function changeTweetLength(uint16 newTweetLength) public onlyOwner {
         MAX_TWEET_LENGTH = newTweetLength;
     }
 
-    function getTweet(uint _i) public view returns (Tweet memory) {
-        return tweets[msg.sender][_i];
+    function getTweet(address author, uint _i) public view returns (Tweet memory) {
+        return tweets[author][_i];
     }
 
-    function getAllTweets() public  view returns (Tweet[] memory) {
-        return tweets[msg.sender];
+    function getAllTweets(address author) public  view returns (Tweet[] memory) {
+        return tweets[author];
     }
 }

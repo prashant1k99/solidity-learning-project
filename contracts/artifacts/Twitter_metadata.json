@@ -37,14 +37,25 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
 				"name": "getAllTweets",
 				"outputs": [
 					{
 						"components": [
 							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
 								"internalType": "address",
-								"name": "auther",
+								"name": "author",
 								"type": "address"
 							},
 							{
@@ -74,6 +85,11 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
 						"name": "_i",
 						"type": "uint256"
@@ -84,8 +100,13 @@
 					{
 						"components": [
 							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
 								"internalType": "address",
-								"name": "auther",
+								"name": "author",
 								"type": "address"
 							},
 							{
@@ -110,6 +131,24 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "likeTweet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -141,8 +180,13 @@
 				"name": "tweets",
 				"outputs": [
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
-						"name": "auther",
+						"name": "author",
 						"type": "address"
 					},
 					{
@@ -162,6 +206,24 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "unlikeTweet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -193,11 +255,11 @@
 	},
 	"sources": {
 		"contracts/Twitter.sol": {
-			"keccak256": "0x6b1219b089721f22ceb31a0cac395a7fd3e82b1cf78a2782fd570ee9d641abc0",
+			"keccak256": "0x5a4dd78d17100377671be8a61eb3c17b4c7666a050373f687300479b35ceb1ed",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0cdb9ffdfaa66085b96aaac1c8e6d65912a1f0149e1a1863594414d487099892",
-				"dweb:/ipfs/QmTv84uPRv51SCXqQaNyuELnBmXuE65s7vyt3PRDcBohMq"
+				"bzz-raw://19c73e3a4743976d6b8c9a73436e1443731a2bd725d236c5dee3c5809bd3b7da",
+				"dweb:/ipfs/QmdB8WAi3XatKKjWCo3Mkrp2zDhnqUEbF7xJbDbRpv4ftt"
 			]
 		}
 	},
