@@ -172,3 +172,17 @@ contract TeslaRegistry {
         teslas.push(newTesla);
     }
 }
+
+// Require: It is used to create conditions in Solidity
+// if (true) { continue; } otherwise { REVERT; }
+
+contract SimpleToken {
+    uint256 public maxPerMint = 3;
+
+    function mint(uint256 amount)  public {
+        require(amount <= maxPerMint, "No more then 3 allowed");
+
+        // ....
+        // mint the coin
+    }
+}
