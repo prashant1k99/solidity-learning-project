@@ -2,9 +2,8 @@
 
 pragma solidity ^0.8.0;
 
-// 1️⃣ Define a Tweet Struct with author, content, timestamp, likes ✅
-// 2️⃣ Add the struct to array ✅
-// 3️⃣ Test Tweets ✅
+// 1️⃣  Use require to limit the length of the tweet to be only 280 characters ✅
+// HINT: use bytes to length of tweet
 
 contract Twitter {
 
@@ -19,6 +18,9 @@ contract Twitter {
     mapping(address => Tweet[]) public tweets;
 
     function crateTweet(string memory _tweet) public {
+        // if tweet length <= 280 then we are good, otherwise we revert
+        require(bytes(_tweet).length <= 280, "Exceeds the character limit for a single tweet");
+
         Tweet memory newTweet = Tweet({
             auther: msg.sender,
             content: _tweet,
